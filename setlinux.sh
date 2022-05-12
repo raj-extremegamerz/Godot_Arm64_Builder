@@ -13,6 +13,7 @@ wget https://github.com/pyston/pyston/releases/download/pyston_2.3.2/pyston_2.3.
 tar -xf pyston_2.3.2_portable.tar.gz
 cd pyston_2.3.2/bin/
 ./pyston -m pip install scons
+~/.local/opt/pyston/pyston_2.3.2/bin/pyston -m pip install --upgrade pip
 mkdir -p ~/.local/bin/
 ln -s ~/.local/opt/pyston_2.3.2/bin/scons ~/.local/bin/pyston-scons
 echo Downloading Godot Source
