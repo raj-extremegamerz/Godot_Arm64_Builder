@@ -22,7 +22,8 @@ clear
 echo Starting Building
 cd godot
 export PATH=$HOME/.local/opt/pyston_2.3.2/bin:$HOME/.local/bin:$PATH
-~/.local/opt/pyston/pyston_2.3.2/bin/scons arch=arm64 -j8 platform=x11 use_llvm=yes use_lld=yes target=release_debug tools=yes
+~/.local/opt/pyston/pyston_2.3.2/bin/scons platform=x11 target=release_debug tools=yes use_llvm=yes CCFLAGS="-march=armv8-a+fp+simd" arch=arm64 -j4
+#scons arch=arm64 -j8 platform=x11 use_llvm=yes use_lld=yes target=release_debug tools=yes
 echo Build Finished
 ls -a 
 exit 0
