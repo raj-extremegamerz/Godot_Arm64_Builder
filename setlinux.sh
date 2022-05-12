@@ -12,8 +12,9 @@ sudo sed -i 's;#!/usr/bin/python$;#!/usr/bin/python3;' $(which scons)
 echo Downloading Godot Source
 cd
 git clone https://github.com/godotengine/godot.git
+cd godot
 wget https://raw.githubusercontent.com/DLTcollab/sse2neon/master/sse2neon.h
-sed -i 's;^#include <xmmintrin.h>;#include "sse2neon.h" //Patch for arm systems. Original: #include <xmmintrin.h>;' thirdparty/oidn/common/platform.h
+sed -i 's;^#include <xmmintrin.h>;#include "sse2neon.h" thirdparty/oidn/common/platform.h
 clear
 echo Starting Building
 cd godot
