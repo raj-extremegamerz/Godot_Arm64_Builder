@@ -2,7 +2,7 @@
 echo Downloading Required package
 clear
 cd $HOME
-sudo apt-get update 
+sudo apt-get update -y && sudo apt upgrade -y
 clear
 sudo apt-get install git clang build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev libglu-dev libasound2-dev libpulse-dev libudev-dev libxi-dev libxrandr-dev yasm -y
 clear
