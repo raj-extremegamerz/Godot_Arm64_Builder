@@ -23,4 +23,5 @@ cd godot
 export PATH=$HOME/.local/opt/pyston_2.3.2/bin:$HOME/.local/bin:$PATH
 ~/.local/opt/pyston/pyston_2.3.2/bin/scons arch=aarch64 -j8 platform=x11 use_llvm=yes use_lld=yes target=release_debug use_lto=yes tools=yes
 echo Build Finished
+ls -a 
 exit 0
