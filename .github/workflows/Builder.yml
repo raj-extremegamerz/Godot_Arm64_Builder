@@ -24,5 +24,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: Godot_Arm64
-          path: ~/godot/bin
+          path: |
+            ~/godot/bin/*.bin
+            ~/Godot/bin/*
           if-no-files-found: error
