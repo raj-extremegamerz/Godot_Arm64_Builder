@@ -1,16 +1,14 @@
 #!/bin/bash
 echo Downloading Required package
-clear
 cd $HOME
 sudo apt-get update -y && sudo apt upgrade -y
-clear
 sudo apt-get install git clang build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev libglu-dev libasound2-dev libpulse-dev libudev-dev libxi-dev libxrandr-dev yasm -y
 clear
 echo Downloading Godot Source
 git clone https://github.com/godotengine/godot.git
-cd godot/thirdparty/oidn/common
+cd ~/godot/thirdparty/oidn/common
 wget https://raw.githubusercontent.com/DLTcollab/sse2neon/master/sse2neon.h
-rm -rf platform.h
+sudo rm -rf platform.h
 wget https://raw.githubusercontent.com/raj-extremegamerz/godot-arm-builder/master/thirdparty/oidn/common/platform.h
 clear
 echo Starting Building
