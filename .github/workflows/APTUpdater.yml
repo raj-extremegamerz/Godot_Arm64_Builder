@@ -14,13 +14,22 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - run: |
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Apt Repo Generated"
+          git push
+      - name: Download Required Package
+        run: sudo apt update -y && sudo apt install gnupg apt* dpkg* -y 
+      - name: Create Packages
+        run: cd $GITHUB_WORKSPACE/apt
+        run: dpkg-scanpackages --multiversion . > Packages
+        run: gzip -k -f Packages
+      - name: Create InRelease And Release File
+        run: sudo apt-ftparchive release . > Release
+        run: gpg --default-key "rosbyraj@gmail.com" -abs -o - Release > Release.gpg
+        run: gpg --default-key "rosbyraj@gmail.com" --clearsign -o - Release > InRelease
 
-      # Runs a single command using the runners shell
-      #- name: Run a one-line script
-      #  run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        
