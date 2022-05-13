@@ -14,7 +14,6 @@ clear
 echo Starting Building
 cd ~/godot
 scons platform=linuxbsd arch=arm64 tools=yes target=release_debug use_llvm=no -j8 ; scons -c # 8 threads used because most SBCs have between 4-8 cores. This will make sure they are all used for building.
-scons platform=linuxbsd arch=arm64 tools=no target=release use_llvm=no -j8 ; scons -c
 scons platform=linuxbsd arch=arm64 tools=no target=release_debug use_llvm=no -j8 ; scons -c
 echo Build Finished
 ls -a 
