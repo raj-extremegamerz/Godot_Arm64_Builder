@@ -25,4 +25,4 @@ jobs:
         with:
           name: Godot_Arm64
           path: ~/godot/bin
-          if-no-files-found: warn
+          if-no-files-found: error
