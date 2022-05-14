@@ -8,25 +8,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_Tools:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      - name: BUILDER
-        run: |
-          wget https://raw.githubusercontent.com/raj-extremegamerz/Godot_Arm64_Builder/main/Build_Tools.sh
-          chmod +x Build_Tools.sh
-          sh Build_Tools.sh
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Godot_Tools_Arm64
-          path: ~/godot/bin/godot*tools.arm64
-          if-no-files-found: error
-
   build_Editor:
     runs-on: ubuntu-latest
 
@@ -42,7 +23,26 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: Godot_TOOLS_Arm64
+          name: Godot_Editor_Arm64
           path: ~/godot/bin/godot*debug.arm64
-          if-no-files-found: warn
+          if-no-files-found: error
+
+  build_Tools:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: BUILDER
+        run: |
+          wget https://raw.githubusercontent.com/raj-extremegamerz/Godot_Arm64_Builder/main/Build_Tools.sh
+          chmod +x Build_Tools.sh
+          sh Build_Tools.sh
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Godot_TOOLS_Arm64
+          path: ~/godot/bin/godot*tools.arm64
+          if-no-files-found: error
 
