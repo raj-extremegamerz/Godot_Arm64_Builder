@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build_Editor:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
         run: |
           wget https://raw.githubusercontent.com/raj-extremegamerz/Godot_Arm64_Builder/main/setlinux.sh
           chmod +x setlinux.sh
-          sh setlinux.sh
+          sh setlinux.sh editor
 
       - uses: actions/upload-artifact@v3
         with:
@@ -33,3 +33,23 @@ jobs:
          # name: Godot_TOOLS_Arm64
           path: ~/godot/bin/godot*tools.arm64
           if-no-files-found: warn
+
+  build_TOOLS:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: BUILDER
+        run: |
+          wget https://raw.githubusercontent.com/raj-extremegamerz/Godot_Arm64_Builder/main/setlinux.sh
+          chmod +x setlinux.sh
+          sh setlinux.sh tools
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Godot_TOOLS_Arm64
+          path: ~/godot/bin/godot*tools.arm64
+          if-no-files-found: warn
+
