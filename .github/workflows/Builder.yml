@@ -17,9 +17,9 @@ jobs:
 
       - name: BUILDER
         run: |
-          wget https://raw.githubusercontent.com/raj-extremegamerz/Godot_Arm64_Builder/main/setlinux.sh
-          chmod +x setlinux.sh
-          sh setlinux.sh editor
+          wget https://raw.githubusercontent.com/raj-extremegamerz/Godot_Arm64_Builder/main/Build_Editor.sh
+          chmod +x Build_Editor.sh
+          sh Build_Editor.sh
 
       - uses: actions/upload-artifact@v3
         with:
@@ -36,9 +36,9 @@ jobs:
 
       - name: BUILDER
         run: |
-          wget https://raw.githubusercontent.com/raj-extremegamerz/Godot_Arm64_Builder/main/setlinux.sh
-          chmod +x setlinux.sh
-          sh setlinux.sh tools
+          wget https://raw.githubusercontent.com/raj-extremegamerz/Godot_Arm64_Builder/main/Build_Tools.sh
+          chmod +x Build_Tools.sh
+          sh Build_Tools.sh
 
       - uses: actions/upload-artifact@v3
         with:
