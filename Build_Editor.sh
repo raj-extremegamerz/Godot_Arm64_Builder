@@ -13,7 +13,7 @@ wget https://raw.githubusercontent.com/raj-extremegamerz/godot-arm-builder/maste
 clear
 echo Starting Building
 cd ~/godot
-scons platform=linuxbsd arch=arm64 tools=no target=release_debug use_llvm=no -j8 ; scons -c
+scons platform=linuxbsd arch=arm64 tools=no target=release_debug use_llvm=no -j8
 strip ~/godot/bin/*debug.arm64
 echo Build Finished
 ls -a 
