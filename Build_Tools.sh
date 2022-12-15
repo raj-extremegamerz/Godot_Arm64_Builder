@@ -13,7 +13,7 @@ wget https://raw.githubusercontent.com/raj-extremegamerz/godot-arm-builder/maste
 clear
 echo Starting Building
 cd ~/godot
-scons platform=linuxbsd arch=arm64 tools=yes target=release_debug use_llvm=no -j8 ; scons -c # 8 threads used because most SBCs have between 4-8 cores. This will make sure they are all used for building.
+scons platform=linuxbsd arch=arm64 tools=yes target=template_debug use_llvm=no -j8 ; scons -c # 8 threads used because most SBCs have between 4-8 cores. This will make sure they are all used for building.
 strip ~/godot/bin/*tools.arm64
 echo Build Finished
 ls -a 
