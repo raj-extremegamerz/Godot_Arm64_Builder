@@ -13,7 +13,7 @@ git clone https://github.com/godotengine/godot.git
 clear
 echo Starting Building
 cd ~/godot
-scons platform=linuxbsd arch=arm64 tools=no target=editor use_llvm=no -j8
+scons platform=linuxbsd arch=arm64 target=editor use_llvm=no -j8
 strip ~/godot/bin/*.arm64
 echo Build Finished
 ls -a 
