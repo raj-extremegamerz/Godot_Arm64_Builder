@@ -6,10 +6,10 @@ sudo apt-get install binutils git clang build-essential scons pkg-config libx11-
 clear
 echo Downloading Godot Source
 git clone https://github.com/godotengine/godot.git
-cd ~/godot/thirdparty/oidn/common
-wget https://raw.githubusercontent.com/DLTcollab/sse2neon/master/sse2neon.h
-sudo rm -rf platform.h
-wget https://raw.githubusercontent.com/raj-extremegamerz/godot-arm-builder/master/thirdparty/oidn/common/platform.h
+#cd ~/godot/thirdparty/oidn/common
+#wget https://raw.githubusercontent.com/DLTcollab/sse2neon/master/sse2neon.h
+#sudo rm -rf platform.h
+#wget https://raw.githubusercontent.com/raj-extremegamerz/godot-arm-builder/master/thirdparty/oidn/common/platform.h
 clear
 echo Starting Building
 cd ~/godot
