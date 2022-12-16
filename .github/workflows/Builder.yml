@@ -24,7 +24,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: Godot_Editor_Arm64
-          path: ~/godot/bin/godot*.arm64
+          path: ~/godot/bin/godot*editor.arm64
           if-no-files-found: error
 
   build_Tools:
@@ -43,6 +43,6 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: Godot_TOOLS_Arm64
-          path: ~/godot/bin/*.arm64
+          path: ~/godot/bin/*template_debug.arm64
           if-no-files-found: error
 
